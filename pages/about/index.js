@@ -23,6 +23,7 @@ import {
   SiCplusplus,
   SiGit,
   SiAdobeillustrator,
+  SiReact,
 } from 'react-icons/si'
 
 //  data
@@ -33,12 +34,12 @@ const aboutData = [
       {
         title: 'Programming',
         icons: [
-          <FaJava />,
-          <SiCsharp />,
-          <FaPython />,
-          <SiMysql />,
-          <SiKotlin />,
-          <SiCplusplus />,
+          <FaJava key={'java'} />,
+          <SiCsharp key={'c#'} />,
+          <FaPython key={'python'} />,
+          <SiMysql key={'mysql'} />,
+          <SiKotlin key={'kotlin'} />,
+          <SiCplusplus key={'cpp'} />,
         ],
         links: [
           'https://www.java.com/en/',
@@ -53,24 +54,37 @@ const aboutData = [
       {
         title: 'Web Development',
         icons: [
-          <FaHtml5 />,
-          <FaCss3 />,
-          <FaJs />,
-          <FaReact />,
-          <SiNextdotjs />,
+          <FaHtml5 key={'html'} />,
+          <FaCss3 key={'css'} />,
+          <FaJs key={'js'} />,
+          <FaReact key={'reactjs'} />,
+          <SiReact key={'reactnative'} />,
+          <SiNextdotjs key={'nextjs'} />,
         ],
         links: [
           'https://www.w3schools.com/html/',
           'https://www.w3schools.com/css/',
           'https://www.w3schools.com/js/',
           'https://react.dev/',
+          'https://reactnative.dev/',
           'https://nextjs.org/',
         ],
-        names: ['HTML5', 'CSS', 'Javascript', 'React.js', 'Next.js'],
+        names: [
+          'HTML5',
+          'CSS',
+          'Javascript',
+          'React.js',
+          'React Native',
+          'Next.js',
+        ],
       },
       {
         title: 'UI/UX Design',
-        icons: [<FaFigma />, <SiAdobeillustrator />, <SiAdobephotoshop />],
+        icons: [
+          <FaFigma key={'figma'} />,
+          <SiAdobeillustrator key={'illustrator'} />,
+          <SiAdobephotoshop key={'photoshop'} />,
+        ],
         links: [
           'https://www.figma.com/',
           'https://www.adobe.com/products/illustrator.html',
@@ -80,7 +94,7 @@ const aboutData = [
       },
       {
         title: 'Tools',
-        icons: [<FaGithub />, <SiGit />],
+        icons: [<FaGithub key={'github'} />, <SiGit key={'git'} />],
         links: ['https://github.com/', 'https://git-scm.com/'],
         names: ['GitHub', 'Git'],
       },

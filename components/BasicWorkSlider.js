@@ -104,6 +104,7 @@ const BasicWorkSlider = () => {
                 {slide.images.map((image, index) => {
                   return (
                     <div
+                      key={index}
                       className={
                         'group relative flex max-h-[250px] items-center justify-center overflow-hidden rounded-lg'
                       }>

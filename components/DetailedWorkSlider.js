@@ -164,9 +164,10 @@ const DetailedWorkSlider = () => {
                       className={
                         'flex flex-row flex-nowrap justify-center gap-x-2'
                       }>
-                      {image.languages.map((language) => {
+                      {image.languages.map((language, index) => {
                         return (
                           <div
+                            key={index}
                             className={`mt-3 overflow-auto rounded-2xl border-2 border-pinkish bg-primary bg-opacity-30 p-2 lg:mb-3 ${roboto_slab.variable} font-robotoSlab text-[12px] lg:text-[14px]`}>
                             {language}
                           </div>

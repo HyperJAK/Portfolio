@@ -38,7 +38,7 @@ const Contact = () => {
             animate={'show'}
             exit={'hidden'}
             className={` h2 mb-12 text-center  ${rubikBlack.variable} font-rubik`}>
-            Let's <span className={'text-accent'}>connect.</span>
+            Let&apos;s <span className={'text-accent'}>connect.</span>
           </motion.h2>
           {/*Form*/}
           <motion.form
@@ -76,8 +76,9 @@ const Contact = () => {
                 className={
                   'transition-all duration-500 group-hover:-translate-y-[120%] group-hover:opacity-0'
                 }>
-                Let's talk
+                Let&apos;s Talk
               </span>
+
               <BsArrowRight
                 className={
                   'absolute text-[22px] opacity-0 transition-all duration-300 group-hover:flex group-hover:opacity-100'
