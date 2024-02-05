@@ -10,7 +10,9 @@ import {motion} from 'framer-motion'
 import {fadeIn} from '../../variants'
 import {Roboto_Slab, Rubik} from 'next/font/google'
 import * as emailjs from '@emailjs/browser'
-import {useRef, useState} from 'react'
+import {useEffect, useRef, useState} from 'react'
+import ErrorNotification from '../../components/ErrorNotification'
+import SuccessNotification from '../../components/SuccessNotification'
 
 const rubikBlack = Rubik({
   subsets: ['latin'],
@@ -18,14 +20,22 @@ const rubikBlack = Rubik({
   weight: ['900'],
 })
 
-const roboto_slab = Roboto_Slab({
-  subsets: ['latin'],
-  variable: '--font-roboto-slab',
-  weight: ['400'],
-})
-
 const Contact = () => {
+  const [validForm, setValidForm] = useState(-1)
   const form = useRef()
+  const name = useRef()
+  const email = useRef()
+  const subject = useRef()
+  const message = useRef()
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setValidForm(-1)
+    }, 3000)
+
+    return () => clearTimeout(timeout)
+  }, [validForm])
+
   const sendEmail = (e) => {
     e.preventDefault()
     emailjs
@@ -45,16 +55,20 @@ const Contact = () => {
       )
       .then(
         () => {
-          console.log('SUCCESS!')
+          setValidForm(0)
         },
         (error) => {
-          console.log('FAILED...', error.text)
+          setValidForm(1)
         }
       )
+    name.current.value = ''
+    email.current.value = ''
+    subject.current.value = ''
+    message.current.value = ''
   }
 
   return (
-    <div className={'h-full bg-primary/30'}>
+    <div className={'h-full items-center bg-primary/30'}>
       <div
         className={
           'container mx-auto flex h-full items-center justify-center py-32 text-center xl:text-left'
@@ -84,12 +98,14 @@ const Contact = () => {
               <input
                 type={'text'}
                 placeholder={'name'}
+                ref={name}
                 name={'from_name'}
                 className={'input border-white/40'}
               />
               <input
                 type={'email'}
                 placeholder={'email'}
+                ref={email}
                 name={'from_email'}
                 className={'input border-white/40'}
               />
@@ -97,12 +113,14 @@ const Contact = () => {
             <input
               type={'text'}
               placeholder={'subject'}
+              ref={subject}
               name={'subject'}
               className={'input border-white/40'}
             />
             <textarea
               placeholder={'message'}
               name={'message'}
+              ref={message}
               className={'textarea border-white/40'}></textarea>
             <button
               className={
@@ -115,7 +133,6 @@ const Contact = () => {
                 }>
                 Let&apos;s Talk
               </span>
-
               <BsArrowRight
                 className={
                   'absolute text-[22px] opacity-0 transition-all duration-300 group-hover:flex group-hover:opacity-100'
@@ -125,6 +142,12 @@ const Contact = () => {
           </motion.form>
         </div>
       </div>
+      {validForm === 0 && (
+        <SuccessNotification message={'Email sent successfully'} />
+      )}
+      {validForm === 1 && (
+        <ErrorNotification message={'Failed to send email'} />
+      )}
     </div>
   )
 }
