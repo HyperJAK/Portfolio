@@ -36,27 +36,25 @@ const Work = () => {
             className={
               'mt-[25%] flex flex-col gap-y-5 sm:mt-[0%]  lg:w-[30vw] xl:mb-0 xl:w-[30vw]'
             }>
-            {!showDetails && (
-              <>
-                <motion.h2
-                  variants={fadeIn('up', 0.2)}
-                  initial={'hidden'}
-                  animate={'show'}
-                  exit={'hidden'}
-                  className={`h2 lg:mt-[50%] ${rubikBlack.variable} font-rubik`}>
-                  My work <span className={'text-accent'}>.</span>
-                </motion.h2>
-                <motion.p
-                  variants={fadeIn('up', 0.2)}
-                  initial={'hidden'}
-                  animate={'show'}
-                  exit={'hidden'}
-                  className={`${roboto_slab.variable} mx-auto mb-6 max-w-max font-robotoSlab lg:mx-0`}>
-                  All the work that i have done so far, ranging from 2021 till
-                  present day.
-                </motion.p>
-              </>
-            )}
+            <div className={showDetails ? 'hidden sm:block' : 'block'}>
+              <motion.h2
+                variants={fadeIn('up', 0.2)}
+                initial={'hidden'}
+                animate={'show'}
+                exit={'hidden'}
+                className={`h2 lg:mt-[50%] ${rubikBlack.variable} font-rubik`}>
+                My work <span className={'text-accent'}>.</span>
+              </motion.h2>
+              <motion.p
+                variants={fadeIn('up', 0.2)}
+                initial={'hidden'}
+                animate={'show'}
+                exit={'hidden'}
+                className={`${roboto_slab.variable} mx-auto mb-6 max-w-max font-robotoSlab lg:mx-0`}>
+                All the work that i have done so far, ranging from 2021 till
+                present day.
+              </motion.p>
+            </div>
 
             {!showDetails && (
               <>
@@ -86,7 +84,6 @@ const Work = () => {
                 </motion.div>
               </>
             )}
-
             {showDetails && (
               <>
                 {/**/}
