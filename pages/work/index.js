@@ -89,6 +89,7 @@ const Work = () => {
 
             {showDetails && (
               <>
+                {/**/}
                 <motion.div
                   variants={fadeIn('down', 0.4)}
                   initial={'hidden'}
