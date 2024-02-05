@@ -77,7 +77,7 @@ const Work = () => {
                   initial={'hidden'}
                   animate={'show'}
                   exit={'hidden'}
-                  className={'lm:flex hidden'}
+                  className={'hidden sm:flex'}
                   onClick={() => {
                     console.log('CLicked')
                     setShowDetails(!showDetails)
@@ -89,6 +89,7 @@ const Work = () => {
 
             {showDetails && (
               <>
+                {/**/}
                 <motion.div
                   variants={fadeIn('down', 0.4)}
                   initial={'hidden'}
@@ -106,7 +107,7 @@ const Work = () => {
                   initial={'hidden'}
                   animate={'show'}
                   exit={'hidden'}
-                  className={'lm:flex hidden'}
+                  className={'hidden sm:flex'}
                   onClick={() => {
                     console.log('CLicked')
                     setShowDetails(!showDetails)
