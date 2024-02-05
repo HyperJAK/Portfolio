@@ -9,6 +9,8 @@ import {motion} from 'framer-motion'
 //variant imports
 import {fadeIn} from '../../variants'
 import {Roboto_Slab, Rubik} from 'next/font/google'
+import * as emailjs from '@emailjs/browser'
+import {useRef, useState} from 'react'
 
 const rubikBlack = Rubik({
   subsets: ['latin'],
@@ -23,6 +25,34 @@ const roboto_slab = Roboto_Slab({
 })
 
 const Contact = () => {
+  const form = useRef()
+  const sendEmail = (e) => {
+    e.preventDefault()
+    emailjs
+      .sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID
+          ? process.env.NEXT_PUBLIC_SERVICE_ID
+          : process.env.SERVICE_ID,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID
+          ? process.env.NEXT_PUBLIC_TEMPLATE_ID
+          : process.env.TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY
+            ? process.env.NEXT_PUBLIC_PUBLIC_KEY
+            : process.env.PUBLIC_KEY,
+        }
+      )
+      .then(
+        () => {
+          console.log('SUCCESS!')
+        },
+        (error) => {
+          console.log('FAILED...', error.text)
+        }
+      )
+  }
+
   return (
     <div className={'h-full bg-primary/30'}>
       <div
@@ -42,36 +72,43 @@ const Contact = () => {
           </motion.h2>
           {/*Form*/}
           <motion.form
+            ref={form}
             variants={fadeIn('up', 0.4)}
             initial={'hidden'}
             animate={'show'}
             exit={'hidden'}
-            className={`mx-auto flex w-full flex-1 flex-col gap-6 ${roboto_slab.variable} font-robotoSlab`}>
+            className={`mx-auto flex w-full flex-1 flex-col gap-6 `}
+            onSubmit={sendEmail}>
             {/*Inputs*/}
             <div className={'flex w-full gap-x-6'}>
               <input
                 type={'text'}
                 placeholder={'name'}
+                name={'from_name'}
                 className={'input border-white/40'}
               />
               <input
                 type={'email'}
                 placeholder={'email'}
+                name={'from_email'}
                 className={'input border-white/40'}
               />
             </div>
             <input
               type={'text'}
               placeholder={'subject'}
+              name={'subject'}
               className={'input border-white/40'}
             />
             <textarea
               placeholder={'message'}
+              name={'message'}
               className={'textarea border-white/40'}></textarea>
             <button
               className={
                 'btn group flex max-w-[170px] items-center justify-center overflow-hidden rounded-full border border-white/50 px-8 transition-all duration-300 hover:border-accent'
-              }>
+              }
+              type={'submit'}>
               <span
                 className={
                   'transition-all duration-500 group-hover:-translate-y-[120%] group-hover:opacity-0'
