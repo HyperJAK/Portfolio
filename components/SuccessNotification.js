@@ -11,7 +11,7 @@ const roboto_slab = Roboto_Slab({
 const SuccessNotification = ({message}) => {
   return (
     <div
-      className={`duration-2000 absolute left-[48%] top-20 mx-auto flex w-auto items-center justify-center rounded-2xl bg-green-500 p-5 transition-all`}>
+      className={`duration-2000 absolute left-[25%] top-40 z-30 mx-auto flex w-auto items-center justify-center rounded-2xl bg-green-500 p-5 text-center transition-all sm:left-[44%] sm:top-20`}>
       <div className={`text-white ${roboto_slab.variable} font-robotoSlab`}>
         {message ? message : 'Success'}
       </div>
