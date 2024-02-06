@@ -8,18 +8,22 @@ const workSliderData = {
         {
           title: 'Portfolio Website',
           path: '/Projects Showcase/show1.jpeg',
+          link: 'https://github.com/HyperJAK/Portfolio',
         },
         {
           title: 'Trip Booking Website',
           path: '/Projects Showcase/show2.jpeg',
+          link: 'https://github.com/HyperJAK/MobileDevFinalProj-reactjs.git',
         },
         {
           title: 'Trip Booking app',
           path: '/Projects Showcase/show3.jpeg',
+          link: 'https://github.com/HyperJAK/MobileDevFinalProj-reactNative.git',
         },
         {
           title: 'Car Dealership',
           path: '/Projects Showcase/show4.jpeg',
+          link: 'https://github.com/HyperJAK/CarDealership-Maven-Runnable.git',
         },
       ],
     },
@@ -28,18 +32,22 @@ const workSliderData = {
         {
           title: 'Security Testing',
           path: '/Projects Showcase/show5.jpeg',
+          link: 'https://github.com/HyperJAK/CompSecFinalProj.git',
         },
         {
           title: 'Music Player',
           path: '/Projects Showcase/show6.jpeg',
+          link: 'https://github.com/HyperJAK/Music-Player-CSharp.git',
         },
         {
           title: 'AI Rock Paper Scissors',
           path: '/Projects Showcase/show7.jpeg',
+          link: 'https://github.com/PeekMe01/AIFingerCountingProject',
         },
         {
           title: 'Youtube Downloader',
           path: '/Projects Showcase/show8.jpeg',
+          link: 'https://github.com/HyperJAK/Youtube-Downloader',
         },
       ],
     },
@@ -48,6 +56,7 @@ const workSliderData = {
         {
           title: 'UX-UI W4Kitchen cooking',
           path: '/Projects Showcase/show9.jpeg',
+          link: 'https://www.figma.com/file/7Ki5oDpHGewYVtXTnNBfpy/UI%2FUX-Design-Project-Sketches?node-id=0-1&t=ox3GwJIeYkUgUGUw-0',
         },
       ],
     },
@@ -112,12 +121,16 @@ const BasicWorkSlider = () => {
                         className={
                           'relative flex items-center justify-center overflow-hidden border-8 border-transparent transition-all duration-300 hover:border-8 hover:border-accent'
                         }>
-                        <Image
-                          src={image.path}
-                          width={500}
-                          height={300}
-                          alt={''}
-                        />
+                        <Link
+                          href={image.link}
+                          target={'_blank'}>
+                          <Image
+                            src={image.path}
+                            width={500}
+                            height={300}
+                            alt={''}
+                          />
+                        </Link>
                       </div>
                     </div>
                   )
