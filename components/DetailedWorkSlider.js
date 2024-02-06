@@ -11,7 +11,7 @@ const workSliderData = {
           languages: ['Next.js', 'Tailwind CSS'],
           description:
             'A portfolio website made through Next.js framework with tailwind CSS library implementation for each of styling and animating.',
-          link: '',
+          link: 'https://github.com/HyperJAK/Portfolio',
         },
         {
           title: 'Trip Booking Website',
