@@ -44,11 +44,14 @@ const Home = () => {
             'container mx-auto flex h-full flex-col justify-center text-center xl:pt-20 xl:text-left'
           }>
           <h1 className={`h1 z-20 ${rubikBold.variable} font-rubik`}>
-            Work done <br />
-            is work{' '}
             <span className={`text-accent ${rubikBlack.variable} font-rubik`}>
-              Won
+              Present{' '}
             </span>
+            effort <br />
+            <span className={`text-accent ${rubikBlack.variable} font-rubik`}>
+              ripens{' '}
+            </span>
+            the future{' '}
           </h1>
           {/*Description*/}
           <motion.p
@@ -61,7 +64,6 @@ const Home = () => {
             building side projects in his free time for self improvement and
             development.
           </motion.p>
-
           {/*Button for projects*/}
           <motion.div
             variants={fadeIn('down', 0.4)}
