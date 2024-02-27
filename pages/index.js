@@ -95,7 +95,7 @@ const Home = () => {
         {/*Particles*/}
         <ParticlesContainer />
         {/*Avatar image*/}
-        {/*<motion.div
+        <motion.div
           variants={fadeIn('up', 0.5)}
           initial={'hidden'}
           animate={'show'}
@@ -105,7 +105,7 @@ const Home = () => {
             'absolute -bottom-32 h-full max-h-[678px] w-full max-w-[737px] lg:bottom-0 lg:right-[8%]'
           }>
           <Avatar />
-        </motion.div>*/}
+        </motion.div>
       </div>
     </div>
   )
