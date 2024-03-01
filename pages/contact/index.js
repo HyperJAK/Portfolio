@@ -38,29 +38,40 @@ const Contact = () => {
 
   const sendEmail = (e) => {
     e.preventDefault()
-    emailjs
-      .sendForm(
-        process.env.NEXT_PUBLIC_SERVICE_ID
-          ? process.env.NEXT_PUBLIC_SERVICE_ID
-          : process.env.SERVICE_ID,
-        process.env.NEXT_PUBLIC_TEMPLATE_ID
-          ? process.env.NEXT_PUBLIC_TEMPLATE_ID
-          : process.env.TEMPLATE_ID,
-        form.current,
-        {
-          publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY
-            ? process.env.NEXT_PUBLIC_PUBLIC_KEY
-            : process.env.PUBLIC_KEY,
-        }
-      )
-      .then(
-        () => {
-          setValidForm(0)
-        },
-        (error) => {
-          setValidForm(1)
-        }
-      )
+
+    if (
+      name.current.value !== '' &&
+      email.current.value !== '' &&
+      subject.current.value !== '' &&
+      message.current.value !== ''
+    ) {
+      emailjs
+        .sendForm(
+          process.env.NEXT_PUBLIC_SERVICE_ID
+            ? process.env.NEXT_PUBLIC_SERVICE_ID
+            : process.env.SERVICE_ID,
+          process.env.NEXT_PUBLIC_TEMPLATE_ID
+            ? process.env.NEXT_PUBLIC_TEMPLATE_ID
+            : process.env.TEMPLATE_ID,
+          form.current,
+          {
+            publicKey: process.env.NEXT_PUBLIC_PUBLIC_KEY
+              ? process.env.NEXT_PUBLIC_PUBLIC_KEY
+              : process.env.PUBLIC_KEY,
+          }
+        )
+        .then(
+          () => {
+            setValidForm(0)
+          },
+          (error) => {
+            setValidForm(1)
+          }
+        )
+    } else {
+      setValidForm(1)
+    }
+
     name.current.value = ''
     email.current.value = ''
     subject.current.value = ''
