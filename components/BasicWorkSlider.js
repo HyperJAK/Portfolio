@@ -58,6 +58,11 @@ const workSliderData = {
           path: '/Projects Showcase/show9.jpeg',
           link: 'https://www.figma.com/file/7Ki5oDpHGewYVtXTnNBfpy/UI%2FUX-Design-Project-Sketches?node-id=0-1&t=ox3GwJIeYkUgUGUw-0',
         },
+        {
+          title: 'Project and Task management',
+          path: '/Projects Showcase/show10.jpeg',
+          link: 'https://github.com/HyperJAK/TaskManagementAPI',
+        },
       ],
     },
   ],

@@ -85,6 +85,14 @@ const workSliderData = {
             'A Figma design of a cooking website and mobile application.',
           link: 'https://www.figma.com/file/7Ki5oDpHGewYVtXTnNBfpy/UI%2FUX-Design-Project-Sketches?node-id=0-1&t=ox3GwJIeYkUgUGUw-0',
         },
+        {
+          title: 'Project and Task management',
+          path: '/Projects Showcase/show10.jpeg',
+          languages: ['C#', 'Linq', 'Next.js'],
+          description:
+            'A Project and Task management web API developed in C# along with entity framework constructed SQLite database. And optional swagger or Next.js frontend demo',
+          link: 'https://github.com/HyperJAK/TaskManagementAPI',
+        },
       ],
     },
   ],
