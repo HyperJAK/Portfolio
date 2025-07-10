@@ -93,7 +93,7 @@ const Home = () => {
           }></div>
 
         {/*Particles*/}
-        <ParticlesContainer />
+        {/*<ParticlesContainer />*/}
         {/*Avatar image*/}
         <motion.div
           variants={fadeIn('up', 0.5)}
