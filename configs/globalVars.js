@@ -1,0 +1,1 @@
+export const myDescription = 'Detail-oriented developer with internship experience in designing and implementing web applications, database management, and API development.';

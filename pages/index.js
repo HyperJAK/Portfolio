@@ -12,6 +12,9 @@ import {motion} from 'framer-motion'
 //variants
 import {fadeIn} from '../variants'
 
+//global variables
+import {myDescription} from '../configs/globalVars'
+
 const rubikBold = Rubik({
   subsets: ['latin'],
   variable: '--font-rubik',
@@ -29,6 +32,7 @@ const roboto_slab = Roboto_Slab({
   variable: '--font-roboto-slab',
   weight: ['700'],
 })
+
 
 const Home = () => {
   return (
@@ -60,7 +64,7 @@ const Home = () => {
             animate={'show'}
             exit={'hidden'}
             className={`z-20 mx-auto mb-10 max-w-sm text-white xl:mx-0 xl:mb-16 xl:max-w-xl ${roboto_slab.variable} relative font-robotoSlab`}>
-            Detail-oriented developer with internship experience in designing and implementing web applications, database management, and API development.
+            {myDescription}
           </motion.p>
           {/*Button for projects*/}
           <motion.div
