@@ -24,6 +24,12 @@ import {
   SiGit,
   SiAdobeillustrator,
   SiReact,
+  SiAngular,
+  SiTypescript,
+  SiWordpress,
+  SiBitbucket,
+  SiJira,
+  SiSourcetree,
 } from 'react-icons/si'
 
 //  data
@@ -60,6 +66,9 @@ const aboutData = [
           <FaReact key={'reactjs'} />,
           <SiReact key={'reactnative'} />,
           <SiNextdotjs key={'nextjs'} />,
+          <SiAngular key={'angular'} />,
+          <SiTypescript key={'typescript'} />,
+          <SiWordpress key={'wordpress'} />,
         ],
         links: [
           'https://www.w3schools.com/html/',
@@ -68,6 +77,9 @@ const aboutData = [
           'https://react.dev/',
           'https://reactnative.dev/',
           'https://nextjs.org/',
+          'https://angular.dev/',
+          'https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes-oop.html',
+          'https://wordpress.org/',
         ],
         names: [
           'HTML5',
@@ -76,6 +88,9 @@ const aboutData = [
           'React.js',
           'React Native',
           'Next.js',
+          'Angular',
+          'TypeScript',
+          'WordPress',
         ],
       },
       {
@@ -94,9 +109,9 @@ const aboutData = [
       },
       {
         title: 'Tools',
-        icons: [<FaGithub key={'github'} />, <SiGit key={'git'} />],
-        links: ['https://github.com/', 'https://git-scm.com/'],
-        names: ['GitHub', 'Git'],
+        icons: [<FaGithub key={'github'} />, <SiGit key={'git'} />, <SiBitbucket key={'bitbucket'} />, <SiJira key={'jira'} />, <SiSourcetree key={'sourcetree'} />],
+        links: ['https://github.com/', 'https://git-scm.com/', 'https://bitbucket.org/product/', 'https://www.atlassian.com/software/jira', 'https://www.sourcetreeapp.com/'],
+        names: ['GitHub', 'Git', 'Bitbucket', 'Jira', 'SourceTree'],
       },
     ],
   },
@@ -125,7 +140,7 @@ const aboutData = [
     info: [
       {
         title: 'Université Antonine',
-        stage: '2021 - Present',
+        stage: '2021',
         link: 'https://ua.edu.lb/en/home',
       },
     ],
@@ -184,6 +199,9 @@ import {FaPython} from 'react-icons/fa6'
 import Link from 'next/link'
 import {Roboto_Slab, Rubik} from 'next/font/google'
 
+//global variables
+import {myDescription} from '../../configs/globalVars'
+
 const rubikBlack = Rubik({
   subsets: ['latin'],
   variable: '--font-rubik',
@@ -195,6 +213,7 @@ const roboto_slab = Roboto_Slab({
   variable: '--font-roboto-slab',
   weight: ['700'],
 })
+
 
 const About = () => {
   const [index, setIndex] = useState(0)
@@ -222,9 +241,7 @@ const About = () => {
           </h2>
           <p
             className={`${roboto_slab.variable} mx-auto mb-6 max-w-[500px] px-2 font-robotoSlab xl:mx-0 xl:mb-12 xl:px-0`}>
-            Dedicated and passionate CS student who loves coding, and enjoys
-            building side projects in his free time for self improvement and
-            development.
+            {myDescription}
           </p>
           {/*LinkedIn*/}
           {/*Button for projects*/}
@@ -285,12 +302,12 @@ const About = () => {
                       <div
                         key={itemIndex}
                         className={
-                          'flex max-w-max flex-1 flex-col items-center gap-x-2  text-white/60 md:flex-row'
+                          'flex w-full flex-col items-center justify-center text-white/60 md:flex-row'
                         }>
                         {/*Title*/}
                         <div
                           className={
-                            'mb:mb-0 font-light group-hover:text-white'
+                            'font-light group-hover:text-white text-center bg-primary'
                           }>
                           {item.title}
                         </div>
@@ -314,12 +331,12 @@ const About = () => {
                     <div
                       key={itemIndex}
                       className={
-                        'flex max-w-max flex-1 flex-col items-center gap-x-2  text-white/60 md:flex-row'
+                        'flex max-w-max flex-1 flex-row items-center gap-5  text-white/60 md:flex-row'
                       }>
                       {/*Title*/}
                       <div className={'mb:mb-0 font-light'}>{item.title}</div>
 
-                      <div className={'flex gap-x-4'}>
+                      <div className={'flex gap-2 flex-wrap'}>
                         {/*Icons*/}
                         {item.icons?.map((icon, itemIndex) => {
                           return (
