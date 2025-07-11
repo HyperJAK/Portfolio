@@ -60,9 +60,7 @@ const Home = () => {
             animate={'show'}
             exit={'hidden'}
             className={`z-20 mx-auto mb-10 max-w-sm text-white xl:mx-0 xl:mb-16 xl:max-w-xl ${roboto_slab.variable} relative font-robotoSlab`}>
-            Dedicated and passionate CS student who loves coding, and enjoys
-            building side projects in his free time for self improvement and
-            development.
+            Detail-oriented developer with internship experience in designing and implementing web applications, database management, and API development.
           </motion.p>
           {/*Button for projects*/}
           <motion.div
