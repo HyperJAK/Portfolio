@@ -1,73 +1,6 @@
 // data
 import Image from 'next/image'
 
-const workSliderData = {
-  slides: [
-    {
-      images: [
-        {
-          title: 'Portfolio Website',
-          path: '/Projects Showcase/show1.jpeg',
-          link: 'https://github.com/HyperJAK/Portfolio',
-        },
-        {
-          title: 'Trip Booking Website',
-          path: '/Projects Showcase/show2.jpeg',
-          link: 'https://github.com/HyperJAK/MobileDevFinalProj-reactjs.git',
-        },
-        {
-          title: 'Trip Booking app',
-          path: '/Projects Showcase/show3.jpeg',
-          link: 'https://github.com/HyperJAK/MobileDevFinalProj-reactNative.git',
-        },
-        {
-          title: 'Car Dealership',
-          path: '/Projects Showcase/show4.jpeg',
-          link: 'https://github.com/HyperJAK/CarDealership-Maven-Runnable.git',
-        },
-      ],
-    },
-    {
-      images: [
-        {
-          title: 'Security Testing',
-          path: '/Projects Showcase/show5.jpeg',
-          link: 'https://github.com/HyperJAK/CompSecFinalProj.git',
-        },
-        {
-          title: 'Music Player',
-          path: '/Projects Showcase/show6.jpeg',
-          link: 'https://github.com/HyperJAK/Music-Player-CSharp.git',
-        },
-        {
-          title: 'AI Rock Paper Scissors',
-          path: '/Projects Showcase/show7.jpeg',
-          link: 'https://github.com/PeekMe01/AIFingerCountingProject',
-        },
-        {
-          title: 'Youtube Downloader',
-          path: '/Projects Showcase/show8.jpeg',
-          link: 'https://github.com/HyperJAK/Youtube-Downloader',
-        },
-      ],
-    },
-    {
-      images: [
-        {
-          title: 'UX-UI W4Kitchen cooking',
-          path: '/Projects Showcase/show9.jpeg',
-          link: 'https://www.figma.com/file/7Ki5oDpHGewYVtXTnNBfpy/UI%2FUX-Design-Project-Sketches?node-id=0-1&t=ox3GwJIeYkUgUGUw-0',
-        },
-        {
-          title: 'Project and Task management',
-          path: '/Projects Showcase/show10.jpeg',
-          link: 'https://github.com/HyperJAK/TaskManagementAPI',
-        },
-      ],
-    },
-  ],
-}
-
 //import swiper react components
 import {Swiper, SwiperSlide} from 'swiper/react'
 
@@ -95,7 +28,7 @@ const roboto_slab = Roboto_Slab({
   weight: ['400'],
 })
 
-const BasicWorkSlider = () => {
+const BasicWorkSlider = ({workSliderData}) => {
   return (
     <motion.div
       variants={fadeIn('down', 0.6)}

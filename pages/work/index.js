@@ -21,6 +21,111 @@ const roboto_slab = Roboto_Slab({
   weight: ['700'],
 })
 
+const workSliderData = {
+  slides: [
+    {
+      images: [
+        {
+          title: 'Portfolio Website',
+          path: '/Projects Showcase/show1.jpeg',
+          languages: ['Next.js', 'Tailwind CSS'],
+          description:
+            'A portfolio website made through Next.js framework with tailwind CSS library implementation for each of styling and animating.',
+          link: 'https://github.com/HyperJAK/Portfolio',
+        },
+        {
+          title: 'HR System',
+          path: '/Projects Showcase/show11.jpeg',
+          languages: ['Angular', 'TypeScript', 'Material UI', 'Figma'],
+          description:
+            'An internal HR system to streamline workflows, centralize data, and support decision-making across teams.',
+          link: 'https://www.figma.com/design/2pCR5IBTP5KEFZh6jxGYdU/Showcase-HR-System?node-id=0-1&t=si86UeDKwLcuXF5G-1',
+        },
+        {
+          title: 'Trip Booking Website',
+          path: '/Projects Showcase/show2.jpeg',
+          languages: ['React.js', 'Node.js', 'MySQL'],
+          description:
+            'An end-to-end app that allows users to book flights and hotels through web. Developed a separate Node.js backend application using Node.js connected to MySQL database. Also Implemented a robust user management system to authenticate users.',
+          link: 'https://github.com/HyperJAK/MobileDevFinalProj-reactjs.git',
+        },
+        {
+          title: 'Trip Booking app',
+          path: '/Projects Showcase/show3.jpeg',
+          languages: ['React Native', 'Node.js', 'MySQL'],
+          description:
+            'An end-to-end app that allows users to book flights and hotels through mobile. Developed a separate Node.js backend application using Node.js connected to MySQL database. Also Implemented a robust user management system to authenticate users.',
+          link: 'https://github.com/HyperJAK/MobileDevFinalProj-reactNative.git',
+        },
+      ],
+    },
+    {
+      images: [
+        {
+          title: 'Security Testing',
+          path: '/Projects Showcase/show5.jpeg',
+          languages: ['React.js', 'Node.js', 'MySQL'],
+          description:
+            'Small website made for the purpose of implementing and testing security measures like: Authentication, Email otp, Database sensitive data encryption using AES 256 algorithm, Not robot verification, Duplicate Image detection by hash etc..',
+          link: 'https://github.com/HyperJAK/CompSecFinalProj.git',
+        },
+        {
+          title: 'Music Player',
+          path: '/Projects Showcase/show6.jpeg',
+          languages: ['C#'],
+          description:
+            'A music player that plays your local music using public C# library.',
+          link: 'https://github.com/HyperJAK/Music-Player-CSharp.git',
+        },
+        {
+          title: 'AI Rock Paper Scissors',
+          path: '/Projects Showcase/show7.jpeg',
+          languages: ['Python'],
+          description:
+            'A hand tracking AI app that recognizes the form of your hand, has the ability to detect two hands playing rock paper scissors and score the winner each.',
+          link: 'https://github.com/PeekMe01/AIFingerCountingProject',
+        },
+        {
+          title: 'Youtube Downloader',
+          path: '/Projects Showcase/show8.jpeg',
+          languages: ['Python'],
+          description:
+            'A Python GUI app that uses a public library to download YouTube music, videos and playlists.',
+          link: 'https://github.com/HyperJAK/Youtube-Downloader',
+        },
+      ],
+    },
+    {
+      images: [
+        {
+          title: 'UX-UI W4Kitchen cooking',
+          path: '/Projects Showcase/show9.jpeg',
+          languages: ['Figma'],
+          description:
+            'A Figma design of a cooking website and mobile application.',
+          link: 'https://www.figma.com/file/7Ki5oDpHGewYVtXTnNBfpy/UI%2FUX-Design-Project-Sketches?node-id=0-1&t=ox3GwJIeYkUgUGUw-0',
+        },
+        {
+          title: 'Project and Task management',
+          path: '/Projects Showcase/show10.jpeg',
+          languages: ['C#', 'Linq', 'Next.js'],
+          description:
+            'A Project and Task management web API developed in C# along with entity framework constructed SQLite database. And optional swagger or Next.js frontend demo',
+          link: 'https://github.com/HyperJAK/TaskManagementAPI',
+        },
+        {
+          title: 'Car Dealership',
+          path: '/Projects Showcase/show4.jpeg',
+          languages: ['JavaFX', 'MySQL'],
+          description:
+            'A car dealership UI application, connected to a local MySQL database. ',
+          link: 'https://github.com/HyperJAK/CarDealership-Maven-Runnable.git',
+        },
+      ],
+    },
+  ],
+}
+
 const Work = () => {
   const [showDetails, setShowDetails] = useState(false)
 
@@ -122,8 +227,8 @@ const Work = () => {
             animate={'show'}
             exit={'hidden'}
             className={'w-full lg:mt-0 lg:max-w-[70%]'}>
-            {showDetails && <DetailedWorkSlider />}
-            {!showDetails && <BasicWorkSlider />}
+            {showDetails && <DetailedWorkSlider workSliderData={workSliderData} />}
+            {!showDetails && <BasicWorkSlider workSliderData={workSliderData}/>}
           </motion.div>
         </div>
       </div>
